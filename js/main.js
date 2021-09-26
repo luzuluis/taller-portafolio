@@ -37,13 +37,15 @@
 	var slider_play = null;
 	var slider_auto_play = null;
 	let count_sliders = $sliders.length - 1;
-	var time_slider = 6000;
+	var time_slider = 5000;
 	$btnLeft.addEventListener("click", (e) => {
 		indicator = "left";
 		if (slider_play != null) {
 			clearInterval(slider_play);
 			slider_play = null;
 		}
+		//quita el foco de un elemento que se ha seleccionado anteriormente
+		this.blur();
 		previous();
 		slider_auto_play = setTimeout(() => {
 			autoplay();
@@ -55,6 +57,8 @@
 			clearInterval(slider_play);
 			slider_play = null;
 		}
+		//quita el foco de un elemento que se ha seleccionado anteriormente
+		this.blur();
 		next();
 		slider_auto_play = setTimeout(() => {
 			autoplay();

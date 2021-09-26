@@ -1,6 +1,6 @@
 /******* Custom Properties *******/
 :root {
-	--first-color: #007bff; /*#3700b3;*/
+	--first-color: #007bff;
 	/*--first-alpha-color: rgba(55, 0, 179, 0.75);*/
 	--first-alpha-color: rgba(0, 123, 255, 0.75);
 	/*--second-color: #6200ee;
@@ -21,8 +21,13 @@
 	--gray-color: #ccc;
 	--gray-dark-color: #666;
 	--black-color: #000;
-	/*--link-color: #509ee3;*/
+
 	--link-color: #00a4ff;
+	--link-visited-color: #d90062;
+	--link-active-color: #3700b3;
+	--link-hover-color: #fbfbfb;
+	--link-hover2-color: #660099;
+
 	--title-color: #333;
 	--text-color: #222;
 	--white-alpha-color: rgba(255, 255, 255, 0.5);
@@ -53,10 +58,17 @@ a {
 	color: var(--link-color);
 	transition: all 0.5s ease-out;
 }
+a:visited {
+	color: var(--link-visited-color);
+}
+a:active {
+	color: var(--link-active-color);
+}
 a:hover {
 	opacity: 0.75;
-	color: var(--white-color);
+	color: var(--link-hover-color);
 }
+
 h1 {
 	margin: 0;
 	font-size: 2rem;
@@ -126,7 +138,10 @@ p {
 	-ms-transition: opacity 2s ease-in;
 	transition: opacity 2s ease-in;
 }
-
+blockquote {
+	margin: 1rem 2.8rem;
+	padding: 0 1.8rem;
+}
 .active-fadein {
 	opacity: 1;
 	visibility: visible;
@@ -153,11 +168,11 @@ p {
 }
 
 .btn-left {
-	left: 1rem;
+	left: 0.75rem;
 }
 
 .btn-right {
-	right: 1rem;
+	right: 0.75rem;
 }
 .slider-btn span {
 	position: absolute;
@@ -177,6 +192,7 @@ p {
 	-o-box-shadow: 0 0 0 10px var(--gray-light-color), 0 15px 10px;
 	box-shadow: 0 0 0 10px var(--gray-light-color), 0 15px 10px;
 }
+
 .slider-footer {
 	position: relative;
 	left: 50%;
@@ -390,10 +406,11 @@ p {
 }
 /******* Menu *******/
 .menu-btn {
-	outline: thin solid var(--text-color);
+	/*outline: thin solid var(--text-color);*/
+	outline: none;
 	border: 0;
-	width: 2rem;
-	height: 2rem;
+	width: 3rem;
+	height: 3rem;
 	background-color: var(--first-color);
 	cursor: pointer;
 	border-radius: 50%;
@@ -655,7 +672,9 @@ progress::-moz-progress-bar {
 .contact-card > small {
 	margin-top: -1rem;
 }
-
+.contact-card a:hover {
+	color: var(--link-hover2-color);
+}
 .footer {
 	margin-bottom: var(--header-height);
 	padding: 0.5rem;
@@ -745,8 +764,9 @@ progress::-moz-progress-bar {
 	color: var(--title-color);
 }
 .portfolio-modal img {
-	max-width: 300px;
-	height: auto;
+	max-width: 150px;
+	height: 120px;
+	object-fit: cover;
 }
 .portfolio-details {
 	display: grid;

@@ -11,3 +11,6 @@ Advertencia #FFA900
 Información #39C0ED
 Ligero #FBFBFB
 Oscuro #262626
+
+#Corregir rutas de enlace,controlar mayusculas y minisculas
+Tomar en cuenta los nombres de los archivos y escribirlos bien,cuidando de escribir mayusculas y minusculas tal cual como tengan sus respectivos nombres
